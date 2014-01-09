@@ -11,13 +11,12 @@ AV.Cloud.define("good", function(request, response) {
 
 
 AV.Cloud.define("createCode", function(request, response) {
-   var GameScore = AV.Object.extend("GameScore");
+   var GameScore = AV.Object.extend("test");
    var gameScore = new GameScore();
 
    gameScore.save({
-    score: 1338,
-    playerName: "Sean Plott",
-    cheatMode: false
+    code: "1338",
+    rewardType: "1234sdf"    
     }, {
     success: function(gameScore) {
      // The object was saved successfully.
