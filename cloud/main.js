@@ -44,7 +44,7 @@ AV.Cloud.define("getReward", function(request, response) {
 	  {
 		var object = results[0];
 		response.success(object.get('rewardType'));
-		results.destroy();
+		object.destroy();
 	  }
 	  //
     },
