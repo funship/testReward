@@ -11,7 +11,8 @@ AV.Cloud.define("good", function(request, response) {
 
 
 AV.Cloud.define("createCode", function(request, response) {
-   var gameCode = new AV.Object("test");
+   var GameCode = new AV.extend("test");
+   var gameCode = GameCode();
    gameCode.save({   
     code: "11111",
     reardType: "2222"
