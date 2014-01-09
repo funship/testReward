@@ -37,7 +37,7 @@ AV.Cloud.define("createCode", function(request, response) {
 AV.Cloud.define("getReward", function(request, response) {  
   var GameScore = AV.Object.extend("test");
   var query = new AV.Query(GameScore);
-  query.notEqualTo("code", "1");
+  query.equalTo("code", request.params.code);
   query.find({
     success: function(results) {      
       response.success("rewardType");
