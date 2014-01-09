@@ -23,7 +23,7 @@ AV.Cloud.define("createCode", function(request, response) {
     },
     error: function(gameCode, error) {
       // The save failed.  Error is an instance of AV.Error.
-	  response.success("error");
+	  response.success("error"+error);
     }
   });
 });
