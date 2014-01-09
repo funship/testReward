@@ -40,7 +40,7 @@ AV.Cloud.define("getReward", function(request, response) {
   query.notEqualTo("code", "1");
   query.find({
     success: function(results) {      
-      response.success(results.get("rewardType"));
+      response.success("rewardType");
 	  //results.destroy();
     },
     error: function() {
