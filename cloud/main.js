@@ -40,7 +40,7 @@ AV.Cloud.define("getReward", function(request, response) {
   query.find({
     success: function(results) {      
       response.success(results.get("rewardType"));
-	  results.destroy();
+	  //results.destroy();
     },
     error: function() {
       response.error("can't fing code");
