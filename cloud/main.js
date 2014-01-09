@@ -39,13 +39,14 @@ AV.Cloud.define("getReward", function(request, response) {
   var query = new AV.Query(GameScore);
   query.equalTo("code", request.params.code);
   query.find({
-    success: function(results) {  
+    success: function(results) {
 	  if( results.length > 0 )
 	  {
-		var object = results[0];     
+		var object = results[0];
 		response.success(object.get('rewardType'));
+		results.destroy();
 	  }
-	  //results.destroy();
+	  //
     },
     error: function() {
       response.error("can't fing code");
