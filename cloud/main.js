@@ -15,7 +15,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var gameScore = new GameScore();
 
    gameScore.save({
-    score: 1337,
+    score: 1338,
     playerName: "Sean Plott",
     cheatMode: false
     }, {
