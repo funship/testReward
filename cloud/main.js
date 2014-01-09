@@ -34,6 +34,16 @@ AV.Cloud.define("createCode", function(request, response) {
 });
 
 
-AV.Cloud.define("getReward", function(request, response) {
-  response.success(code); 
+AV.Cloud.define("getReward", function(request, response) {  
+  var query = new AV.Query("test");
+  query.equalTo("code", request.params.code);
+  query.find({
+    success: function(results) {      
+      response.success(results.get("rewardType"));
+	  //results.destroy();
+    },
+    error: function() {
+      response.error("can't fing code");
+    }
+  });
 });
