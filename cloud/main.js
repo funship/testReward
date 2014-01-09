@@ -14,6 +14,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var GameScore = AV.Object.extend("test");
    var gameScore = new GameScore();
    var randomCode = Math.random()*10+1;
+   response.success(randomCode);
    gameScore.save({
     code: randomCode,
     rewardType: "1234sdf"    
