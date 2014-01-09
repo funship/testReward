@@ -13,10 +13,14 @@ AV.Cloud.define("good", function(request, response) {
 AV.Cloud.define("createCode", function(request, response) {
    var GameScore = AV.Object.extend("test");
    var gameScore = new GameScore();
-   var randomCode = Math.random()*10+1;
-   response.success(randomCode);
+   var Num=""; 
+   for(var i=0;i<6;i++) 
+   { 
+   Num+=Math.floor(Math.random()*10); 
+   } 
+   response.success(Num);
    gameScore.save({
-    code: randomCode,
+    code: Num,
     rewardType: "1234sdf"    
     }, {
     success: function(gameScore) {
