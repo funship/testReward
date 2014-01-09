@@ -17,11 +17,13 @@ AV.Cloud.define("createCode", function(request, response) {
     code: "11111",
     reardType: "2222"
   }, {
-    success: function(gameTurnAgain) {
+    success: function(gameCode) {
+	response.success("ok");
       // The save was successful.
     },
-    error: function(gameTurnAgain, error) {
+    error: function(gameCode, error) {
       // The save failed.  Error is an instance of AV.Error.
+	  response.success("error");
     }
   });
 });
