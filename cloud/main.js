@@ -15,7 +15,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var gameCode = GameCode();
    gameCode.save({   
     code: "11111",
-    reardType: "2222"
+    rewardType: "2222"
   }, {
     success: function(gameCode) {
 	response.success("ok");
