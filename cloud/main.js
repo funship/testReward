@@ -11,19 +11,20 @@ AV.Cloud.define("good", function(request, response) {
 
 
 AV.Cloud.define("createCode", function(request, response) {
-   var GameCode = new AV.Object.extend("test");
-   var gameCode = GameCode();
-   gameCode.save({   
-    code: "11111",
-    rewardType: "2222"
-  }, {
-    success: function(gameCode) {
-	response.success("ok");
-      // The save was successful.
+   var GameScore = AV.Object.extend("GameScore");
+   var gameScore = new GameScore();
+
+   gameScore.save({
+    score: 1337,
+    playerName: "Sean Plott",
+    cheatMode: false
+    }, {
+    success: function(gameScore) {
+     // The object was saved successfully.
     },
-    error: function(gameCode, error) {
-      // The save failed.  Error is an instance of AV.Error.
-	  response.success("error"+error);
+    error: function(gameScore, error) {
+    // The save failed.
+    // error is a AV.Error with an error code and description.
     }
-  });
+    });
 });
