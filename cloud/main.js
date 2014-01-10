@@ -78,8 +78,8 @@ function getRewardCode(tableName,totalNumber)
    //var gameRward = new GameRward();
    var codeIndex = 0;
     response.success("create code ok");
-	
-	/*
+
+   /*
    while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
@@ -122,7 +122,7 @@ function getRewardCode(tableName,totalNumber)
         
         //} 
     }
-	*/
+ */
 }
 
 AV.Cloud.define("createCode", function(request, response) {
