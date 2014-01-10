@@ -74,6 +74,8 @@ function getRewardCode(GameReward,totalNumber)
 */
 function getRewardCode(GameReward,totalNumber)
 {
+   var gameRward = new GameRward();
+   var codeIndex = 0;
 }
 
 AV.Cloud.define("createCode", function(request, response) {
