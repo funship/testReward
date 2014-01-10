@@ -14,7 +14,8 @@ function checkDulicateCode(codeNumber)
     
 	
     query.equalTo("code", codeNumber);
-        
+     
+/*	 
     query.find({
     success: function(results) {
     if( results.length > 0 )
@@ -26,7 +27,7 @@ function checkDulicateCode(codeNumber)
     error: function() {
              
     }
-	
+*/
     return isDulicateCode;
 }
 
