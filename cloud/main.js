@@ -30,7 +30,7 @@ function checkDulicateCode(GameReward,code)
 function getRewardCode(tableName,totalNumber)
 {
     //var GameRward = AV.Object.extend("Reward");
-	var GameRward = AV.Object.extend(tableName);
+	var GameRward = AV.Object.extend("Reward");
     var gameRward = new GameRward();
     var codeIndex = 0;
  
@@ -56,10 +56,10 @@ function getRewardCode(tableName,totalNumber)
           rewardNum = 3;
         }
    
-         codeIndex = codeIndex + 1;
-        //if(!checkDulicateCode(GameReward,codeNumber))		
+         
+        //if(!checkDulicateCode(GameReward,codeNumber))
         //{
-        /*
+        
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
@@ -72,7 +72,7 @@ function getRewardCode(tableName,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
-        */
+        
         //} 
     }
 
