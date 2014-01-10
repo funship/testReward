@@ -98,7 +98,7 @@ function getRewardCode(GameReward,totalNumber)
         {
           rewardNum = 3;
         }
-   
+        codeIndex = codeIndex + 1;
         response.success("create code ok");
         //if(!checkDulicateCode(GameReward,codeNumber))		
         //{
