@@ -61,8 +61,8 @@ function getRewardCode(tableName,totalNumber)
         //{
         
             gameRward.save({
-            code: codeNumber,
-            rewardType: rewardNum    
+            code: "1231",
+            rewardType: "1sss"    
             }, {
             success: function(gameRward) {
             
