@@ -8,9 +8,10 @@ AV.Cloud.define("good", function(request, response) {
 var isDulicateCode = false;
 function checkDulicateCode(codeNumber)
 {
-	/*
+	
 	var GameRward = AV.Object.extend("Reward");
-    var isDulicateCode = false;
+	var query = new AV.Query(GameRward);
+    /*
     var query = new AV.Query(GameRward);
         query.equalTo("code", codeNumber);
         
