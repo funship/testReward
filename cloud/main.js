@@ -27,9 +27,10 @@ function checkDulicateCode(GameReward,code)
 */
 
 
-function getRewardCode(GameReward,totalNumber)
+function getRewardCode(tableName,totalNumber)
 {
-    var GameRward = AV.Object.extend("Reward");
+    //var GameRward = AV.Object.extend("Reward");
+	var GameRward = AV.Object.extend(tableName);
     var gameRward = new GameRward();
     var codeIndex = 0;
  /*
@@ -77,12 +78,12 @@ function getRewardCode(GameReward,totalNumber)
 
 
 AV.Cloud.define("createCode", function(request, response) {
-   
+   var tableName = "Reward";
    var str = request.params.coder;
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {       
-       getRewardCode(GameRward,codeNumber);
+       getRewardCode(tableName,codeNumber);
        response.success("create code ok");
    }
    
