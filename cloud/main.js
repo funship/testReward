@@ -66,14 +66,14 @@ function getRewardCode(totalNumber)
         if(!checkDulicateCode(codeNumber))
         {
         
-			
+			codeIndex = codeIndex + 1;
 			var gameRward = new GameRward();
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
             }, {
             success: function(gameRward) {
-            codeIndex = codeIndex + 1;
+            
             },
             error: function(gameRward, error) {
             // The save failed.
