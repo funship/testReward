@@ -74,55 +74,12 @@ function getRewardCode(GameReward,totalNumber)
 */
 function getRewardCode(tableName,totalNumber)
 {
-   //var GameRward = AV.Object.extend("Reward");
-   //var gameRward = new GameRward();
+   var GameRward = AV.Object.extend("Reward");
+   var gameRward = new GameRward();
    var codeIndex = 0;
-    response.success("create code ok");
+    
 
-   /*
-   while(codeIndex < totalNumber)
-    {
-        var codeNumber=""; 
-        for(var i=0;i<15;i++) 
-        { 
-             codeNumber+=Math.floor(Math.random()*10); 
-        } 
-        
-        var rewardRandom = Math.floor(Math.random() * 100);
-        var rewardNum = 1;
-        if(rewardRandom < 90)
-        {
-          rewardNum = 1;
-        }else if(rewardRandom < 98)
-        {
-          rewardNum = 2;
-        }
-        else
-        {
-          rewardNum = 3;
-        }
-        codeIndex = codeIndex + 1;
-        response.success("create code ok");
-        //if(!checkDulicateCode(GameReward,codeNumber))		
-        //{
-        
-            gameRward.save({
-            code: codeNumber,
-            rewardType: rewardNum    
-            }, {
-            success: function(gameRward) {
-            codeIndex = codeIndex + 1;
-            response.success("create code ok");
-            },
-            error: function(gameRward, error) {
-            // The save failed.
-            // error is a AV.Error with an error code and description.
-            }
-           });
-        
-        //} 
-    }
- */
+   
 }
 
 AV.Cloud.define("createCode", function(request, response) {
@@ -130,9 +87,9 @@ AV.Cloud.define("createCode", function(request, response) {
    var str = request.params.coder;
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
-   {
-       //response.success("create code ok");
+   {       
        getRewardCode(tableName,codeNumber);
+       response.success("create code ok");
    }
    
    
