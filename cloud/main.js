@@ -4,7 +4,7 @@ AV.Cloud.define("good", function(request, response) {
   var str = request.params.coder + " is good " + request.params.person + " is also good";
   response.success(str);
 });
-
+/*
 function checkDulicateCode(GameReward,code)
 {
     var isDulicateCode = false;
@@ -71,7 +71,7 @@ function getRewardCode(GameReward,totalNumber)
         } 
     }
 }
-
+*/
 AV.Cloud.define("createCode", function(request, response) {
    var GameRward = AV.Object.extend("Rward");   
    var str = request.params.coder;
@@ -79,7 +79,7 @@ AV.Cloud.define("createCode", function(request, response) {
    if(str == "funship@funship.org.123")
    {
        response.success("create code ok");
-       getRewardCode(GameRward,codeNumber);
+       //getRewardCode(GameRward,codeNumber);
    }
    
    
