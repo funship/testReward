@@ -4,9 +4,10 @@ AV.Cloud.define("good", function(request, response) {
   var str = request.params.coder + " is good " + request.params.person + " is also good";
   response.success(str);
 });
-/*
-function checkDulicateCode(GameReward,code)
+
+function checkDulicateCode(code)
 {
+	var GameRward = AV.Object.extend("Reward");
     var isDulicateCode = false;
     var query = new AV.Query(GameRward);
         query.equalTo("code", request.params.code);
@@ -24,12 +25,12 @@ function checkDulicateCode(GameReward,code)
         }
     return isDulicateCode;
 }
-*/
 
 
-function getRewardCode(tableName,totalNumber)
+
+function getRewardCode(totalNumber)
 {
-    //var GameRward = AV.Object.extend("Reward");
+    
 	var GameRward = AV.Object.extend("Reward");
     
     var codeIndex = 0;
@@ -57,9 +58,10 @@ function getRewardCode(tableName,totalNumber)
         }
    
         //codeIndex = codeIndex + 1; 
-        //if(!checkDulicateCode(GameReward,codeNumber))
-        //{
+        if(!checkDulicateCode(codeNumber))
+        {
         
+			//todo:+1应该放到save sucess中
             codeIndex = codeIndex + 1;
 			var gameRward = new GameRward();
             gameRward.save({
@@ -75,7 +77,7 @@ function getRewardCode(tableName,totalNumber)
             }
            });
         
-        //} 
+        } 
     }
 
 }
@@ -87,7 +89,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {       
-       getRewardCode(tableName,codeNumber);
+       getRewardCode(codeNumber);
        response.success("create code ok"+codeNumber);
    }
    
