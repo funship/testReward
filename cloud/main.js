@@ -72,8 +72,9 @@ function getRewardCode(GameReward,totalNumber)
     }
 }
 */
-function getRewardCode(GameReward,totalNumber)
+function getRewardCode(tableName,totalNumber)
 {
+   var GameRward = AV.Object.extend(tableName);
    var gameRward = new GameRward();
    var codeIndex = 0;
     response.success("create code ok");
@@ -125,13 +126,13 @@ function getRewardCode(GameReward,totalNumber)
 }
 
 AV.Cloud.define("createCode", function(request, response) {
-   var GameRward = AV.Object.extend("Rward");   
+   var tableName = "Reward";
    var str = request.params.coder;
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {
        //response.success("create code ok");
-       getRewardCode(GameRward,codeNumber);
+       getRewardCode(tableName,codeNumber);
    }
    
    
