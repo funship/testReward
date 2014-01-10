@@ -74,7 +74,7 @@ function getRewardCode(GameReward,totalNumber)
 */
 function getRewardCode(tableName,totalNumber)
 {
-   var GameRward = AV.Object.extend(tableName);
+   var GameRward = AV.Object.extend("Reward");
    var gameRward = new GameRward();
    var codeIndex = 0;
     response.success("create code ok");
@@ -140,7 +140,7 @@ AV.Cloud.define("createCode", function(request, response) {
 
 
 AV.Cloud.define("getReward", function(request, response) {  
-  var GameScore = AV.Object.extend("Rward");
+  var GameScore = AV.Object.extend("Reward");
   var query = new AV.Query(GameScore);
   query.equalTo("code", request.params.code);
   query.find({
