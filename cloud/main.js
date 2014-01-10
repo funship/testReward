@@ -30,7 +30,7 @@ function checkDulicateCode(GameReward,code)
 function getRewardCode(tableName,totalNumber)
 {
     //var GameRward = AV.Object.extend("Reward");
-	var GameRward = AV.Object.extend("Reward");
+	var GameRward = AV.Object.extend("test");
     var gameRward = new GameRward();
     var codeIndex = 0;
  
