@@ -30,7 +30,7 @@ function checkDulicateCode(GameReward,code)
 function getRewardCode(tableName,totalNumber)
 {
     //var GameRward = AV.Object.extend("Reward");
-	var GameRward = AV.Object.extend("test");
+	var GameRward = AV.Object.extend("Reward");
     var gameRward = new GameRward();
     var codeIndex = 0;
  
@@ -60,12 +60,13 @@ function getRewardCode(tableName,totalNumber)
         //if(!checkDulicateCode(GameReward,codeNumber))
         //{
         
+            codeIndex = codeIndex + 1;
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
             }, {
             success: function(gameRward) {
-            codeIndex = codeIndex + 1;
+            
             },
             error: function(gameRward, error) {
             // The save failed.
