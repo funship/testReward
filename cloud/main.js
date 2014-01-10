@@ -15,19 +15,19 @@ function checkDulicateCode(codeNumber)
 	
     query.equalTo("code", codeNumber);
      
-/*	 
+	 
     query.find({
     success: function(results) {
-    if( results.length > 0 )
-    {
+    //if( results.length > 0 )
+    //{
          //isDulicateCode  = true;
-    }
+    //}
          //
     },
     error: function() {
              
     }
-*/
+
     return isDulicateCode;
 }
 
