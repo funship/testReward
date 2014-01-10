@@ -12,6 +12,7 @@ function checkDulicateCode(codeNumber)
 	var GameRward = AV.Object.extend("Reward");
 	var query = new AV.Query(GameRward);
     
+	/*
     query.equalTo("code", codeNumber);
         
     query.find({
@@ -25,7 +26,7 @@ function checkDulicateCode(codeNumber)
     error: function() {
              
     }
-	
+	*/
     return isDulicateCode;
 }
 
