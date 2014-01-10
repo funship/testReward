@@ -34,7 +34,7 @@ function getRewardCode(tableName,totalNumber)
     var gameRward = new GameRward();
     var codeIndex = 0;
  
-    while(codeIndex < totalNumber)
+    for(codeIndex = 0;codeIndex < totalNumber;++codeIndex)
     {
         var codeNumber=""; 
         for(var i=0;i<15;i++) 
@@ -56,7 +56,7 @@ function getRewardCode(tableName,totalNumber)
           rewardNum = 3;
         }
    
-        codeIndex = codeIndex + 1; 
+        //codeIndex = codeIndex + 1; 
         //if(!checkDulicateCode(GameReward,codeNumber))
         //{
         
