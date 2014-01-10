@@ -32,14 +32,14 @@ function checkDulicateCode(codeNumber)
 }
 
 
-
+var codeIndex = 0;
 function getRewardCode(totalNumber)
 {
     
 	var GameRward = AV.Object.extend("Reward");
     
-    var codeIndex = 0;
- 
+    
+	codeIndex = 0;
     while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
@@ -62,19 +62,18 @@ function getRewardCode(totalNumber)
           rewardNum = "3";
         }
    
-        //codeIndex = codeIndex + 1; 
+         
         if(!checkDulicateCode(codeNumber))
         {
         
-			//todo:+1应该放到save sucess中
-            codeIndex = codeIndex + 1;
+			
 			var gameRward = new GameRward();
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
             }, {
             success: function(gameRward) {
-            
+            codeIndex = codeIndex + 1;
             },
             error: function(gameRward, error) {
             // The save failed.
