@@ -31,7 +31,7 @@ function getRewardCode(GameReward,totalNumber)
 {
     var gameRward = new GameRward();
     var codeIndex = 0;
-	/*
+ /*
     while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
@@ -71,7 +71,7 @@ function getRewardCode(GameReward,totalNumber)
            });
         } 
     }
-	*/
+*/
 }
 
 
