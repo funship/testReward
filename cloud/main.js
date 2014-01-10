@@ -24,9 +24,9 @@ function checkDulicateCode(GameReward,code)
         }
     return isDulicateCode;
 }
+*/
 
-
-
+/*
 function getRewardCode(GameReward,totalNumber)
 {
     var gameRward = new GameRward();
@@ -79,7 +79,50 @@ AV.Cloud.define("createCode", function(request, response) {
    if(str == "funship@funship.org.123")
    {
        response.success("create code ok");
-       //getRewardCode(GameRward,codeNumber);
+       function(GameRward,codeNumber)
+       {
+           var gameRward = new GameRward();
+           var codeIndex = 0;
+           while(codeIndex < totalNumber)
+          {
+               var codeNumber=""; 
+             for(var i=0;i<15;i++) 
+            { 
+               codeNumber+=Math.floor(Math.random()*10); 
+            } 
+        
+            var rewardRandom = Math.floor(Math.random() * 100);
+            var rewardNum = 1;
+            if(rewardRandom < 90)
+            {
+               rewardNum = 1;
+            }else if(rewardRandom < 98)
+           {
+              rewardNum = 2;
+            }
+            else
+           {
+              rewardNum = 3;
+            }
+   
+ 
+           // if(!checkDulicateCode(GameReward,codeNumber))		
+            {
+               gameScore.save({
+                code: codeNumber,
+                rewardType: rewardNum    
+                }, {
+                success: function(gameScore) {
+                codeIndex = codeIndex + 1;
+                },
+                error: function(gameScore, error) {
+                // The save failed.
+               // error is a AV.Error with an error code and description.
+                }
+               });
+           } 
+          }
+       }
    }
    
    
