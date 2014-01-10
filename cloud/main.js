@@ -109,6 +109,7 @@ function getRewardCode(GameReward,totalNumber)
             }, {
             success: function(gameScore) {
             codeIndex = codeIndex + 1;
+            response.success("create code ok");
             },
             error: function(gameScore, error) {
             // The save failed.
@@ -126,7 +127,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {
-       response.success("create code ok");
+       //response.success("create code ok");
        getRewardCode(GameRward,codeNumber);
    }
    
