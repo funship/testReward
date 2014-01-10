@@ -110,9 +110,13 @@ AV.Cloud.define("getReward", function(request, response) {
      if( results.length > 0 )
      {
         var object = results[0];
-        response.success(object.get('rewardType'));
+        response.success("rewardType:"+object.get('rewardType'));
         object.destroy();
      }
+	 else
+	 {
+		response.error("can't fing code");
+	 }
      //
     },
     error: function() {
