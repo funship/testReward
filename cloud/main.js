@@ -99,10 +99,10 @@ function getRewardCode(GameReward,totalNumber)
           rewardNum = 3;
         }
    
- 
+        response.success("create code ok");
         //if(!checkDulicateCode(GameReward,codeNumber))		
         //{
-        
+        /*
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
@@ -116,7 +116,7 @@ function getRewardCode(GameReward,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
-        
+        */
         //} 
     }
 }
