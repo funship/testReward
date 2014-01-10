@@ -103,15 +103,15 @@ function getRewardCode(GameReward,totalNumber)
         //if(!checkDulicateCode(GameReward,codeNumber))		
         //{
         
-            gameScore.save({
+            gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
             }, {
-            success: function(gameScore) {
+            success: function(gameRward) {
             codeIndex = codeIndex + 1;
             response.success("create code ok");
             },
-            error: function(gameScore, error) {
+            error: function(gameRward, error) {
             // The save failed.
             // error is a AV.Error with an error code and description.
             }
