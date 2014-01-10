@@ -34,7 +34,7 @@ function getRewardCode(tableName,totalNumber)
     var gameRward = new GameRward();
     var codeIndex = 0;
  
-    for(codeIndex = 0;codeIndex < totalNumber;++codeIndex)
+    while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
         for(var i=0;i<15;i++) 
@@ -65,7 +65,7 @@ function getRewardCode(tableName,totalNumber)
             rewardType: rewardNum    
             }, {
             success: function(gameRward) {
-            
+            codeIndex = codeIndex + 1;
             },
             error: function(gameRward, error) {
             // The save failed.
