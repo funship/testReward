@@ -5,8 +5,10 @@ AV.Cloud.define("good", function(request, response) {
   response.success(str);
 });
 
+var isDulicateCode = false;
 function checkDulicateCode(codeNumber)
 {
+	/*
 	var GameRward = AV.Object.extend("Reward");
     var isDulicateCode = false;
     var query = new AV.Query(GameRward);
@@ -23,6 +25,7 @@ function checkDulicateCode(codeNumber)
         error: function() {
              
         }
+	*/
     return isDulicateCode;
 }
 
