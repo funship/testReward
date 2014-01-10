@@ -29,6 +29,7 @@ function checkDulicateCode(GameReward,code)
 
 function getRewardCode(GameReward,totalNumber)
 {
+    var GameRward = AV.Object.extend("Reward");
     var gameRward = new GameRward();
     var codeIndex = 0;
  /*
@@ -76,7 +77,7 @@ function getRewardCode(GameReward,totalNumber)
 
 
 AV.Cloud.define("createCode", function(request, response) {
-   var GameRward = AV.Object.extend("Reward");
+   
    var str = request.params.coder;
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
