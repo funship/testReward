@@ -19,7 +19,7 @@ function checkDulicateCode(codeNumber)
     success: function(results) {
     if( results.length > 0 )
     {
-         isDulicateCode  = true;
+         //isDulicateCode  = true;
     }
          //
     },
