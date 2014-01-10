@@ -24,13 +24,14 @@ function checkDulicateCode(GameReward,code)
         }
     return isDulicateCode;
 }
-
+*/
 
 
 function getRewardCode(GameReward,totalNumber)
 {
     var gameRward = new GameRward();
     var codeIndex = 0;
+	/*
     while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
@@ -70,25 +71,17 @@ function getRewardCode(GameReward,totalNumber)
            });
         } 
     }
+	*/
 }
-*/
-function getRewardCode(tableName,totalNumber)
-{
-   var GameRward = AV.Object.extend("Reward");
-   var gameRward = new GameRward();
-   var codeIndex = 0;
-    
 
-   
-}
 
 AV.Cloud.define("createCode", function(request, response) {
-   var tableName = "Reward";
+   var GameRward = AV.Object.extend("Reward");
    var str = request.params.coder;
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {       
-       getRewardCode(tableName,codeNumber);
+       getRewardCode(GameRward,codeNumber);
        response.success("create code ok");
    }
    
