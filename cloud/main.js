@@ -31,10 +31,10 @@ function getRewardCode(tableName,totalNumber)
 {
     //var GameRward = AV.Object.extend("Reward");
 	var GameRward = AV.Object.extend("Reward");
-    var gameRward = new GameRward();
+    
     var codeIndex = 0;
  
-    while(true)
+    while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
         for(var i=0;i<15;i++) 
@@ -61,6 +61,7 @@ function getRewardCode(tableName,totalNumber)
         //{
         
             codeIndex = codeIndex + 1;
+			var gameRward = new GameRward();
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
@@ -73,8 +74,7 @@ function getRewardCode(tableName,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
-        if(codeIndex >= totalNumber)
-		break;
+        
         //} 
     }
 
