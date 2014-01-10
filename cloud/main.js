@@ -56,7 +56,7 @@ function getRewardCode(tableName,totalNumber)
           rewardNum = 3;
         }
    
-         
+        codeIndex = codeIndex + 1; 
         //if(!checkDulicateCode(GameReward,codeNumber))
         //{
         
@@ -65,7 +65,7 @@ function getRewardCode(tableName,totalNumber)
             rewardType: rewardNum    
             }, {
             success: function(gameRward) {
-            codeIndex = codeIndex + 1;
+            
             },
             error: function(gameRward, error) {
             // The save failed.
