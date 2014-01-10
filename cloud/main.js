@@ -1,41 +1,93 @@
 // Use AV.Cloud.define to define as many cloud functions as you want.
 // For example:
-AV.Cloud.define("hello", function(request, response) {
-  response.success("Hello world!");
-});
-
 AV.Cloud.define("good", function(request, response) {
   var str = request.params.coder + " is good " + request.params.person + " is also good";
   response.success(str);
 });
 
+function checkDulicateCode(GameReward,code)
+{
+	var isDulicateCode = false;
+	var query = new AV.Query(GameRward);
+		query.equalTo("code", request.params.code);
+		
+		query.find({
+		success: function(results) {
+		if( results.length > 0 )
+		{
+			isDulicateCode = true;
+		}
+	  //
+		},
+		error: function() {
+			response.error("can't fing code");
+		}
+	return isDulicateCode;
+}
+
+
+
+function getRewardCode(GameReward,totalNumber)
+{
+	var gameRward = new GameRward();
+	var codeIndex = 0;
+    while(codeIndex < totalNumber)
+	{
+		var codeNumber=""; 
+		for(var i=0;i<15;i++) 
+		{ 
+			codeNumber+=Math.floor(Math.random()*10); 
+		} 
+		
+		var rewardRandom = Math.floor(Math.random() * 100);
+		var rewardNum = 1;
+		if(rewardRandom < 90)
+		{
+			rewardNum = 1;
+		}else if(rewardRandom < 98)
+		{
+			rewardNum = 2;
+		}
+		else
+		{
+			rewardNum = 3;
+		}
+		
+		
+		if(!checkDulicateCode(GameReward,codeNumber))		
+		{
+			gameScore.save({
+			code: codeNumber,
+			rewardType: rewardNum    
+			}, {
+			success: function(gameScore) {
+			codeIndex = codeIndex + 1;
+			},
+			error: function(gameScore, error) {
+			// The save failed.
+			// error is a AV.Error with an error code and description.
+			}
+			});
+		}		
+	}
+}
 
 AV.Cloud.define("createCode", function(request, response) {
-   var GameScore = AV.Object.extend("test");
-   var gameScore = new GameScore();
-   var Num=""; 
-   for(var i=0;i<6;i++) 
-   { 
-   Num+=Math.floor(Math.random()*10); 
-   } 
-   response.success(Num);
-   gameScore.save({
-    code: Num,
-    rewardType: "1234sdf"    
-    }, {
-    success: function(gameScore) {
-     // The object was saved successfully.
-    },
-    error: function(gameScore, error) {
-    // The save failed.
-    // error is a AV.Error with an error code and description.
-    }
-    });
+   var GameRward = AV.Object.extend("Rward");   
+   var str = request.params.coder;
+   var codeNumber = request.params.number;
+   if(str == "funship@funship.org.123")
+   {
+       response.success("create code ok");
+       getRewardCode(GameRward,codeNumber);
+   }
+   
+   
 });
 
 
 AV.Cloud.define("getReward", function(request, response) {  
-  var GameScore = AV.Object.extend("test");
+  var GameScore = AV.Object.extend("Rward");
   var query = new AV.Query(GameScore);
   query.equalTo("code", request.params.code);
   query.find({
