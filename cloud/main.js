@@ -34,7 +34,7 @@ function getRewardCode(tableName,totalNumber)
     var gameRward = new GameRward();
     var codeIndex = 0;
  
-    while(codeIndex < totalNumber)
+    while(true)
     {
         var codeNumber=""; 
         for(var i=0;i<15;i++) 
@@ -73,7 +73,8 @@ function getRewardCode(tableName,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
-        
+        if(codeIndex >= totalNumber)
+		break;
         //} 
     }
 
