@@ -18,16 +18,16 @@ function checkDulicateCode(codeNumber)
 	 
     query.find({
     success: function(results) {
-    //if( results.length > 0 )
-    //{
-         //isDulicateCode  = true;
-    //}
-         //
+    if( results.length > 0 )
+    {
+         isDulicateCode  = true;
+    }
+         
     },
     error: function() {
              
     }
-
+	});
     return isDulicateCode;
 }
 
