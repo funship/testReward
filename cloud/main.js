@@ -76,7 +76,9 @@ function getRewardCode(GameReward,totalNumber)
 {
    var gameRward = new GameRward();
    var codeIndex = 0;
-   
+    response.success("create code ok");
+	
+	/*
    while(codeIndex < totalNumber)
     {
         var codeNumber=""; 
@@ -102,7 +104,7 @@ function getRewardCode(GameReward,totalNumber)
         response.success("create code ok");
         //if(!checkDulicateCode(GameReward,codeNumber))		
         //{
-        /*
+        
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
@@ -116,9 +118,10 @@ function getRewardCode(GameReward,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
-        */
+        
         //} 
     }
+	*/
 }
 
 AV.Cloud.define("createCode", function(request, response) {
