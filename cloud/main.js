@@ -115,12 +115,12 @@ AV.Cloud.define("getReward", function(request, response) {
      }
 	 else
 	 {
-		response.error("can't fing code");
+		response.success("can't find code");
 	 }
      //
     },
     error: function() {
-      response.error("can't fing code");
+      response.success("can't find code");
     }
   });
 });
