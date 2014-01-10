@@ -56,9 +56,10 @@ function getRewardCode(tableName,totalNumber)
           rewardNum = 3;
         }
    
- 
+         codeIndex = codeIndex + 1;
         //if(!checkDulicateCode(GameReward,codeNumber))		
         //{
+        /*
             gameRward.save({
             code: codeNumber,
             rewardType: rewardNum    
@@ -71,6 +72,7 @@ function getRewardCode(tableName,totalNumber)
             // error is a AV.Error with an error code and description.
             }
            });
+        */
         //} 
     }
 
@@ -83,7 +85,7 @@ AV.Cloud.define("createCode", function(request, response) {
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {       
-       //getRewardCode(tableName,codeNumber);
+       getRewardCode(tableName,codeNumber);
        response.success("create code ok"+codeNumber);
    }
    
