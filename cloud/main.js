@@ -43,17 +43,17 @@ function getRewardCode(tableName,totalNumber)
         } 
         
         var rewardRandom = Math.floor(Math.random() * 100);
-        var rewardNum = 1;
+        var rewardNum = "1";
         if(rewardRandom < 90)
         {
-          rewardNum = 1;
+          rewardNum = "1";
         }else if(rewardRandom < 98)
         {
-          rewardNum = 2;
+          rewardNum = "2";
         }
         else
         {
-          rewardNum = 3;
+          rewardNum = "3";
         }
    
         //codeIndex = codeIndex + 1; 
@@ -62,7 +62,7 @@ function getRewardCode(tableName,totalNumber)
         
             gameRward.save({
             code: codeNumber,
-            rewardType: "1sss"    
+            rewardType: rewardNum    
             }, {
             success: function(gameRward) {
             
