@@ -93,7 +93,11 @@ AV.Cloud.define("createCode", function(request, response) {
    var codeNumber = request.params.number;
    if(str == "funship@funship.org.123")
    {       
-       getRewardCode(codeNumber);
+		var perCodeNumber = codeNumber / 500;
+		for (var i=0;i<perCodeNumber;i++)
+		{
+			getRewardCode(perCodeNumber);
+	   }
        response.success("create code ok"+codeNumber);
    }
    
