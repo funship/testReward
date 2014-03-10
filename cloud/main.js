@@ -6,10 +6,44 @@ AV.Cloud.define("good", function(request, response) {
 });
 
 AV.Cloud.define("getTime", function(request, response) {
-  var myDate() = new Date()();
-  var str = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
+  
+  var date = new Date();  
+  var year = date.getFullYear();//年
+  var month = date.getMonth() + 1;//月
+  var day = date.getDate();	 //日  
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  //月份小于10时显示为'0X'
+  if (month < 10) {
+  month = "0" + month;
+  }
+
+  //天数小于10时显示为'0X'
+  if (day < 10) {
+  day = "0" + day;
+  }
+
+  //小时小于10时显示为'0X'
+  if (hour < 10) {
+  hour = "0" + hour;
+  }
+
+  //分钟小于10时显示为'0X'
+  if (minute < 10) {
+  minute = "0" + minute;
+ }
+
+  //秒钟小于10时显示为'0X'
+  if (second < 10) {
+  second = "0" + second;
+ }
+
+  var colon = ":";
+  var str = year + colon + month + colon + day + colon + hour + colon +minute + colon + second;
   response.success(str);
 });
+
 
 AV.Cloud.define("getReward", function(request, response) {  
   var GameScore = AV.Object.extend("Reward");
