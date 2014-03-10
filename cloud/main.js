@@ -5,6 +5,12 @@ AV.Cloud.define("good", function(request, response) {
   response.success(str);
 });
 
+AV.Cloud.define("getTime", function(request, response) {
+  var myDate() = new Date()();
+  var str = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
+  response.success(str);
+});
+
 AV.Cloud.define("getReward", function(request, response) {  
   var GameScore = AV.Object.extend("Reward");
   var query = new AV.Query(GameScore);
