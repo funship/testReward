@@ -40,7 +40,7 @@ AV.Cloud.define("getTime", function(request, response) {
  }
 
   var colon = ":";
-  var str = year + colon + month + colon + day + colon + hour + colon +minute + colon + second;
+  var str = "serverTime " + year + colon + month + colon + day + colon + hour + colon +minute + colon + second;
   response.success(str);
 });
 
